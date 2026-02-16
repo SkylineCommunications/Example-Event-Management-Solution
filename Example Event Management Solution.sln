@@ -4,6 +4,8 @@ VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_GQIDS", "ExampleEventManager_GQIDS\ExampleEventManager_GQIDS.csproj", "{1731C6DF-4370-4AB3-9BC0-8BC6C94B5C9D}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GQI_Shared", "GQI_Shared\GQI_Shared.shproj", "{2A202239-F01E-49FE-B9DF-6707AC07F94B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,5 +22,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAEEEFD5-BE1D-4B64-AF51-6B2ED8B7A8FD}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		GQI_Shared\GQI_Shared.projitems*{1731c6df-4370-4ab3-9bc0-8bc6c94b5c9d}*SharedItemsImports = 5
+		GQI_Shared\GQI_Shared.projitems*{2a202239-f01e-49fe-b9df-6707ac07f94b}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

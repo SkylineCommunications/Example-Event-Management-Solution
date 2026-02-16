@@ -11,11 +11,14 @@
 		<VersionComment>Initial Version</VersionComment>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Skyline.DataMiner.Dev.Common" Version="10.3.0.25" />
-		<PackageReference Include="Skyline.DataMiner.Files.SLAnalyticsTypes" Version="10.3.0.25" />
+		<PackageReference Include="Skyline.DataMiner.Dev.Common" Version="10.6.2.2" />
+		<PackageReference Include="Skyline.DataMiner.Files.SLAnalyticsTypes" Version="10.6.2.2" />
+		<PackageReference Include="Skyline.DataMiner.SDM.UserDefinedApi.Runtime" Version="0.3.4" />
+		<PackageReference Include="Skyline.DataMiner.Utils.Examples.EventManager" Version="1.0.1" />
 		<PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.2.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
+	<Import Project="..\GQI_Shared\GQI_Shared.projitems" Label="Shared" />
 </Project>
