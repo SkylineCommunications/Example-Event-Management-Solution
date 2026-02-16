@@ -8,6 +8,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GQI_Shared", "GQI_Shared\GQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_UDAPI", "ExampleEventManager_UDAPI\ExampleEventManager_UDAPI.csproj", "{A2FCA06F-96CA-45B0-A867-1949113FD503}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_EventIntelligence", "ExampleEventManager_EventIntelligence\ExampleEventManager_EventIntelligence.csproj", "{F4FC4AD4-E743-48AB-96E9-E2A387F0BA84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{A2FCA06F-96CA-45B0-A867-1949113FD503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2FCA06F-96CA-45B0-A867-1949113FD503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2FCA06F-96CA-45B0-A867-1949113FD503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4FC4AD4-E743-48AB-96E9-E2A387F0BA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4FC4AD4-E743-48AB-96E9-E2A387F0BA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4FC4AD4-E743-48AB-96E9-E2A387F0BA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4FC4AD4-E743-48AB-96E9-E2A387F0BA84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
