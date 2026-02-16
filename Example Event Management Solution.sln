@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_GQIDS",
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GQI_Shared", "GQI_Shared\GQI_Shared.shproj", "{2A202239-F01E-49FE-B9DF-6707AC07F94B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_UDAPI", "ExampleEventManager_UDAPI\ExampleEventManager_UDAPI.csproj", "{A2FCA06F-96CA-45B0-A867-1949113FD503}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,6 +18,10 @@ Global
 		{1731C6DF-4370-4AB3-9BC0-8BC6C94B5C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1731C6DF-4370-4AB3-9BC0-8BC6C94B5C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1731C6DF-4370-4AB3-9BC0-8BC6C94B5C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2FCA06F-96CA-45B0-A867-1949113FD503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2FCA06F-96CA-45B0-A867-1949113FD503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2FCA06F-96CA-45B0-A867-1949113FD503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2FCA06F-96CA-45B0-A867-1949113FD503}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
