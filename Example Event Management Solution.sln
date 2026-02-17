@@ -2,13 +2,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_GQIDS", "ExampleEventManager_GQIDS\ExampleEventManager_GQIDS.csproj", "{1731C6DF-4370-4AB3-9BC0-8BC6C94B5C9D}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GQI_Shared", "GQI_Shared\GQI_Shared.shproj", "{2A202239-F01E-49FE-B9DF-6707AC07F94B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_UDAPI", "ExampleEventManager_UDAPI\ExampleEventManager_UDAPI.csproj", "{A2FCA06F-96CA-45B0-A867-1949113FD503}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_EventIntelligence", "ExampleEventManager_EventIntelligence\ExampleEventManager_EventIntelligence.csproj", "{F4FC4AD4-E743-48AB-96E9-E2A387F0BA84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example Event Manager", "Example Event Manager\Example Event Manager.csproj", "{B54BC782-CD55-46B4-92EE-E2C481E1A0E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_GQIDS", "ExampleEventManager_GQIDS\ExampleEventManager_GQIDS.csproj", "{A3EE21E7-9D25-4F90-8E05-5C2207709CDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dis", "dis", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "F6FA7C06433F0ECC45936AB7327CEEE9", "F6FA7C06433F0ECC45936AB7327CEEE9", "{D370A052-7F9D-4473-A463-1EE867A41307}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_GQIDS", "..\..\..\AppData\Local\Temp\DIS\AutomationScripts\F6FA7C06433F0ECC45936AB7327CEEE9\ExampleEventManager_GQIDS\ExampleEventManager_GQIDS.csproj", "{17ECE6D8-87B3-3A2B-1FE8-AC49B78917F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +24,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1731C6DF-4370-4AB3-9BC0-8BC6C94B5C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1731C6DF-4370-4AB3-9BC0-8BC6C94B5C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1731C6DF-4370-4AB3-9BC0-8BC6C94B5C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1731C6DF-4370-4AB3-9BC0-8BC6C94B5C9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A2FCA06F-96CA-45B0-A867-1949113FD503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A2FCA06F-96CA-45B0-A867-1949113FD503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2FCA06F-96CA-45B0-A867-1949113FD503}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -28,15 +32,31 @@ Global
 		{F4FC4AD4-E743-48AB-96E9-E2A387F0BA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4FC4AD4-E743-48AB-96E9-E2A387F0BA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4FC4AD4-E743-48AB-96E9-E2A387F0BA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B54BC782-CD55-46B4-92EE-E2C481E1A0E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B54BC782-CD55-46B4-92EE-E2C481E1A0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B54BC782-CD55-46B4-92EE-E2C481E1A0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B54BC782-CD55-46B4-92EE-E2C481E1A0E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3EE21E7-9D25-4F90-8E05-5C2207709CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3EE21E7-9D25-4F90-8E05-5C2207709CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3EE21E7-9D25-4F90-8E05-5C2207709CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3EE21E7-9D25-4F90-8E05-5C2207709CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17ECE6D8-87B3-3A2B-1FE8-AC49B78917F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17ECE6D8-87B3-3A2B-1FE8-AC49B78917F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17ECE6D8-87B3-3A2B-1FE8-AC49B78917F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17ECE6D8-87B3-3A2B-1FE8-AC49B78917F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D370A052-7F9D-4473-A463-1EE867A41307} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{17ECE6D8-87B3-3A2B-1FE8-AC49B78917F9} = {D370A052-7F9D-4473-A463-1EE867A41307}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAEEEFD5-BE1D-4B64-AF51-6B2ED8B7A8FD}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		GQI_Shared\GQI_Shared.projitems*{1731c6df-4370-4ab3-9bc0-8bc6c94b5c9d}*SharedItemsImports = 5
 		GQI_Shared\GQI_Shared.projitems*{2a202239-f01e-49fe-b9df-6707ac07f94b}*SharedItemsImports = 13
+		GQI_Shared\GQI_Shared.projitems*{a3ee21e7-9d25-4f90-8e05-5c2207709cde}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

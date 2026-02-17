@@ -13,17 +13,18 @@ DATE		VERSION		AUTHOR			COMMENTS
 
 namespace ExampleEventManagerEventIntelligence
 {
-	using System;
-	using System.Collections.Generic;
-    using System.Text;
-	using Skyline.DataMiner.Automation;
-    using Skyline.DataMiner.Net.SLSearch.Misc;
-    using Skyline.DataMiner.Net;
-    using Skyline.DataMiner.Utils.Examples.EventManager.Models;
-    using Skyline.DataMiner.Net.Messages.SLDataGateway;
-    using Skyline.DataMiner.Net.Apps.DocumentIntelligence;
-    using Skyline.DataMiner.Utils.Examples.EventManager.ApiHelpers;
     using Newtonsoft.Json;
+    using Skyline.DataMiner.Automation;
+    using Skyline.DataMiner.Net;
+    using Skyline.DataMiner.Net.Apps.DocumentIntelligence;
+    using Skyline.DataMiner.Net.Apps.DocumentIntelligence.Objects;
+    using Skyline.DataMiner.Net.Messages.SLDataGateway;
+    using Skyline.DataMiner.Utils.Examples.EventManager.ApiHelpers;
+    using Skyline.DataMiner.Utils.Examples.EventManager.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
     /// <summary>
     /// Represents a DataMiner Automation script.
