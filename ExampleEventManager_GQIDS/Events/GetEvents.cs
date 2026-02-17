@@ -2,12 +2,11 @@ namespace ExampleEventManager_GQIDs.Events
 {
     using System;
     using System.Linq;
+    using System.Runtime.CompilerServices;
     using GQI_Shared;
     using Skyline.DataMiner.Analytics.GenericInterface;
     using Skyline.DataMiner.Analytics.GenericInterface.Operators;
-    using Skyline.DataMiner.Net.DMSState.Agents;
     using Skyline.DataMiner.Net.Messages.SLDataGateway;
-    using Skyline.DataMiner.Net.SLDataGateway.Types;
     using Skyline.DataMiner.SDM.UserDefinedApi.OData;
     using Skyline.DataMiner.Utils.Examples.EventManager.ApiHelpers;
     using Skyline.DataMiner.Utils.Examples.EventManager.Models;
@@ -65,6 +64,9 @@ namespace ExampleEventManager_GQIDs.Events
 
             if (_inputs.FilterRequest != String.Empty)
             {
+                // This ensures that static constructors are called and exposers are registered.
+                RuntimeHelpers.RunClassConstructor(typeof(EventExposers).TypeHandle);
+                RuntimeHelpers.RunClassConstructor(typeof(EventExposers.Languages).TypeHandle);
                 var translator = new ODataSdmTranslator<Event>();
                 filter = translator.TranslateFilter(_inputs.FilterRequest).ToQuery();
             }

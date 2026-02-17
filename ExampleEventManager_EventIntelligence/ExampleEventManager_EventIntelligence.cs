@@ -114,10 +114,24 @@ namespace ExampleEventManagerEventIntelligence
                     engine.Log("ODATAFILTER: " + resultInstructions.ODATAFILTER);
                     break;
                 case "POST":
-                    eventHelper.Events.CreateOrUpdate(JsonConvert.DeserializeObject<List<Event>>(resultInstructions.HTTPBODY));
+                    if (resultInstructions.HTTPBODY.StartsWith("["))
+                    {
+                        eventHelper.Events.CreateOrUpdate(JsonConvert.DeserializeObject<List<Event>>(resultInstructions.HTTPBODY));
+                    }
+                    else
+                    {
+                        eventHelper.Events.Create(JsonConvert.DeserializeObject<Event>(resultInstructions.HTTPBODY));
+                    }
                     break;
                 case "PUT":
-                    eventHelper.Events.CreateOrUpdate(JsonConvert.DeserializeObject<List<Event>>(resultInstructions.HTTPBODY));
+                    if (resultInstructions.HTTPBODY.StartsWith("["))
+                    {
+                        eventHelper.Events.CreateOrUpdate(JsonConvert.DeserializeObject<List<Event>>(resultInstructions.HTTPBODY));
+                    }
+                    else
+                    {
+                        eventHelper.Events.Update(JsonConvert.DeserializeObject<Event>(resultInstructions.HTTPBODY));
+                    }
                     break;
                 case "DELETE":
                     eventHelper.Events.Delete(eventHelper.Events.Read(EventExposers.Identifier.Equal(resultInstructions.MODELID)));
