@@ -9,6 +9,7 @@ namespace ExampleEventManager_GQIDs.Events
     using Skyline.DataMiner.Net.Messages.SLDataGateway;
     using Skyline.DataMiner.SDM.UserDefinedApi.OData;
     using Skyline.DataMiner.Utils.Examples.EventManagement.ApiHelpers;
+    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
     using SLDataGateway.API.Querying;
 
     /// <summary>
@@ -97,7 +98,7 @@ namespace ExampleEventManager_GQIDs.Events
                 new GQICell { Value = empEvent.Start.ToUniversalTime() },
                 new GQICell { Value = empEvent.End.ToUniversalTime() },
                 new GQICell { Value = (int) empEvent.Type, DisplayValue = empEvent.Type.ToString() },
-                new GQICell { Value = (int) empEvent.Priority, DisplayValue = empEvent.Priority.ToString() },
+                new GQICell { Value = (int) empEvent.Status, DisplayValue = empEvent.Status.ToString() },
              });
         }
 

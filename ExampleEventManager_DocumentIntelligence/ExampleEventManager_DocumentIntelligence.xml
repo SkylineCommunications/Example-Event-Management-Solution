@@ -5,7 +5,7 @@
 	<Type>Automation</Type>
 	<Author>TVD</Author>
 	<CheckSets>FALSE</CheckSets>
-	<Folder></Folder>
+	<Folder>Example Event Manager Solution</Folder>
 	<Interactivity>Auto</Interactivity>
 
 	<Protocols>

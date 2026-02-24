@@ -11,10 +11,14 @@ DATE		VERSION		AUTHOR			COMMENTS
 ****************************************************************************
 */
 
+using ExampleEventManager_DocumentIntelligence;
 using Skyline.DataMiner.Automation;
+using Skyline.DataMiner.Net.Apps.DocumentIntelligence;
+using Skyline.DataMiner.Net.Apps.DocumentIntelligence.Objects;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Text;
 
 namespace ExampleEventManagerDocumentIntelligence
@@ -63,8 +67,26 @@ namespace ExampleEventManagerDocumentIntelligence
 
         private void RunSafe(IEngine engine)
         {
-            //"C:\Skyline DataMiner\Documents\DMA_COMMON_DOCUMENTS\Example Event Management\EventRequestForm_ExampleEvent.docx"
+            // Read file content
+            var filePath = @"C:\Skyline DataMiner\Documents\DMA_COMMON_DOCUMENTS\Example Event Management\EventRequestForm_ExampleEvent.docx";
+            var fileBytes = File.ReadAllBytes(filePath);
 
+            // Write instructions
+            // See DocumentInstruction.cs for more details on the instructions.
+
+            // Create Document Intelligence helper
+            var docIntelHelper = new DocumentIntelligenceHelper(engine.SendSLNetMessages);
+            // Request Document Intelligence analysis
+            var analysisResult = docIntelHelper.AnalyzeDocuments(DocumentInstruction.Instruction, new List<Document>()
+            {
+                new Document()
+                {
+                    Name = "RequestedEvent.docx",
+                    Content = fileBytes
+                }
+            });
+
+            engine.Log(analysisResult);
 
         }
     }

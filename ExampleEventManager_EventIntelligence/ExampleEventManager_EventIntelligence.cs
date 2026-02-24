@@ -103,9 +103,9 @@ namespace ExampleEventManagerEventIntelligence
                 },
             });
 
-            var resultInstructions = JsonConvert.DeserializeObject<ResultInstructions>(analysisResultInstructions);
 
             engine.Log("INSTRUCTIONS RECEIVED FROM DOCUMENT INTELLIGENCE:\r\n" + analysisResultInstructions);
+            var resultInstructions = JsonConvert.DeserializeObject<ResultInstructions>(analysisResultInstructions);
 
             switch (resultInstructions.HTTPVERB)
             {

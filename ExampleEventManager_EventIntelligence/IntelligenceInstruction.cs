@@ -160,7 +160,8 @@
 				- when the prompt tag refers to retrieving data, the OData filter in the response should be filled in and the http body should be empty and the HTTPverb should be get
 				- when the prompt tag refers to updating or creating data, the OData filter in the response should be empty and the http body should be filled in with the new or updated data and the HTTPverb should be PUT for update and POST for create
 				- when the prompt tag refers to deleting data, the MODELID in the response should be filled in with the if of the items to delete and the http body should be empty and the HTTPverb should be DELETE
-				- below is the open api spec in yaml that describes the models
+			    - make sure the json value of the httpbody is encapsulted with "" to ensure it is treated as a string in the response and not as a json object
+                - below is the open api spec in yaml that describes the models
 
 				OPENAPI SPEC
 
@@ -286,11 +287,11 @@ paths:
                     - Pro
                     - Advanced
                   type: string
-                Priority:
+                Status:
                   enum:
-                    - Low
-                    - Medium
-                    - High
+                    - Requested
+                    - Processing
+                    - Done
                   type: string
                 Languages:
                   type: array
@@ -336,11 +337,11 @@ paths:
                       - Pro
                       - Advanced
                     type: string
-                  Priority:
+                  Status:
                     enum:
-                      - Low
-                      - Medium
-                      - High
+                      - Requested
+                      - Processing
+                      - Done
                     type: string
                   Languages:
                     type: array
@@ -407,11 +408,11 @@ paths:
                     - Pro
                     - Advanced
                   type: string
-                Priority:
+                Status:
                   enum:
-                    - Low
-                    - Medium
-                    - High
+                    - Requested
+                    - Processing
+                    - Done
                   type: string
                 Languages:
                   type: array
@@ -457,11 +458,11 @@ paths:
                       - Pro
                       - Advanced
                     type: string
-                  Priority:
+                  Status:
                     enum:
-                      - Low
-                      - Medium
-                      - High
+                      - Requested
+                      - Processing
+                      - Done
                     type: string
                   Languages:
                     type: array
@@ -505,11 +506,11 @@ paths:
                       - Pro
                       - Advanced
                     type: string
-                  Priority:
+                  Status:
                     enum:
-                      - Low
-                      - Medium
-                      - High
+                      - Requested
+                      - Processing
+                      - Done
                     type: string
                   Languages:
                     type: array
@@ -600,11 +601,11 @@ components:
             - Pro
             - Advanced
           type: string
-        Priority:
+        Status:
           enum:
-            - Low
-            - Medium
-            - High
+            - Requested
+            - Processing
+            - Done
           type: string
         Languages:
           type: array
