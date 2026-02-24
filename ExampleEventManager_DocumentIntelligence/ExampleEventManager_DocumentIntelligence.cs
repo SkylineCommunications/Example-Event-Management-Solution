@@ -12,6 +12,7 @@ DATE		VERSION		AUTHOR			COMMENTS
 */
 
 using ExampleEventManager_DocumentIntelligence;
+using Newtonsoft.Json;
 using Skyline.DataMiner.Automation;
 using Skyline.DataMiner.Net.Apps.DocumentIntelligence;
 using Skyline.DataMiner.Net.Apps.DocumentIntelligence.Objects;
@@ -67,8 +68,12 @@ namespace ExampleEventManagerDocumentIntelligence
 
         private void RunSafe(IEngine engine)
         {
+            var filePath = engine.GetScriptParam("filePath").Value.Trim('[',']','"');
+
+            engine.Log("FILEPATH: " + filePath);
+
             // Read file content
-            var filePath = @"C:\Skyline DataMiner\Documents\DMA_COMMON_DOCUMENTS\Example Event Management\EventRequestForm_ExampleEvent.docx";
+            //var filePath = @"C:\Skyline DataMiner\Documents\DMA_COMMON_DOCUMENTS\Example Event Management\EventRequestForm_ExampleEvent.docx";
             var fileBytes = File.ReadAllBytes(filePath);
 
             // Write instructions
@@ -81,13 +86,21 @@ namespace ExampleEventManagerDocumentIntelligence
             {
                 new Document()
                 {
-                    Name = "RequestedEvent.docx",
+                    Name = Path.GetFileName(filePath),
                     Content = fileBytes
                 }
             });
 
-            engine.Log(analysisResult);
+            engine.Log("RESULT OF DOC ANALYSIS: " + analysisResult);
 
+            var prompResult = JsonConvert.DeserializeObject<PromptResult>(analysisResult);
+
+            engine.AddOrUpdateScriptOutput("PROMPTRESULT", prompResult.Prompt);
         }
+    }
+
+    public class PromptResult
+    {
+        public string Prompt { get; set; }
     }
 }

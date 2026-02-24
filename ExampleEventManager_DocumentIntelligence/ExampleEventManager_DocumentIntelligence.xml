@@ -15,6 +15,9 @@
 	</Memory>
 
 	<Parameters>
+		<ScriptParameter id="2" type="string" values="">
+			<Description>filePath</Description>
+		</ScriptParameter>
 	</Parameters>
 
 	<Script>
