@@ -7,8 +7,8 @@
 	using Skyline.DataMiner.SDM;
 	using Skyline.DataMiner.SDM.UserDefinedApi;
 	using Skyline.DataMiner.SDM.UserDefinedApi.DI;
-    using Skyline.DataMiner.Utils.Examples.EventManager.ApiHelpers;
-    using Skyline.DataMiner.Utils.Examples.EventManager.Models;
+    using Skyline.DataMiner.Utils.Examples.EventManagement.ApiHelpers;
+    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
 
     internal static class UserDefinedApiExtensions
 	{

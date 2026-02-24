@@ -9,7 +9,7 @@
 	using Skyline.DataMiner.SDM.UserDefinedApi;
 	using Skyline.DataMiner.SDM.UserDefinedApi.OData;
 	using Skyline.DataMiner.SDM.UserDefinedApi.OData.Exceptions;
-    using Skyline.DataMiner.Utils.Examples.EventManager.Models;
+    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
 
     [ApiController]
 	[Route("eventmanager/events")]

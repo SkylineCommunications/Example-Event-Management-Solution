@@ -7,7 +7,7 @@
 	using Skyline.DataMiner.Analytics.GenericInterface.Operators;
 	using Skyline.DataMiner.Net.Messages.SLDataGateway;
 	using Skyline.DataMiner.SDM;
-    using Skyline.DataMiner.Utils.Examples.EventManager.Models;
+    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
     using SLDataGateway.API.Querying;
 	using SLDataGateway.API.Types.Querying;
 
@@ -21,7 +21,7 @@
 			[new GQIDateTimeColumn("Start")] = EventExposers.Start,
 			[new GQIDateTimeColumn("End")] = EventExposers.End,
 			[new GQIIntColumn("Type")] = EventExposers.Type,
-			[new GQIIntColumn("Priority")] = EventExposers.Priority,
+			[new GQIIntColumn("Status")] = EventExposers.Status,
 		};
 
 		internal GQIColumn[] GetColumns() => _columnMap.Keys.ToArray();

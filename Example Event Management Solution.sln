@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example Event Manager", "Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_GQIDS", "ExampleEventManager_GQIDS\ExampleEventManager_GQIDS.csproj", "{A3EE21E7-9D25-4F90-8E05-5C2207709CDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_DocumentIntelligence", "ExampleEventManager_DocumentIntelligence\ExampleEventManager_DocumentIntelligence.csproj", "{21B11BBD-9B0B-4F2E-B92A-C234BB3CAE8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{A3EE21E7-9D25-4F90-8E05-5C2207709CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3EE21E7-9D25-4F90-8E05-5C2207709CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3EE21E7-9D25-4F90-8E05-5C2207709CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21B11BBD-9B0B-4F2E-B92A-C234BB3CAE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21B11BBD-9B0B-4F2E-B92A-C234BB3CAE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21B11BBD-9B0B-4F2E-B92A-C234BB3CAE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21B11BBD-9B0B-4F2E-B92A-C234BB3CAE8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,9 +12,9 @@
     <GenerateOpenApi>true</GenerateOpenApi>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Skyline.DataMiner.Dev.Automation" Version="10.6.2.2" />
-		<PackageReference Include="Skyline.DataMiner.SDM.UserDefinedApi" Version="0.3.4" />
-		<PackageReference Include="Skyline.DataMiner.Utils.Examples.EventManager" Version="1.0.1" />
+		<PackageReference Include="Skyline.DataMiner.Dev.Automation" Version="10.6.3" />
+		<PackageReference Include="Skyline.DataMiner.SDM.UserDefinedApi" Version="1.0.1-rc1" />
+		<PackageReference Include="Skyline.DataMiner.Utils.Examples.EventManagement" Version="1.0.2" />
 		<PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.2.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

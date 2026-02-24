@@ -19,8 +19,8 @@ namespace ExampleEventManagerEventIntelligence
     using Skyline.DataMiner.Net.Apps.DocumentIntelligence;
     using Skyline.DataMiner.Net.Apps.DocumentIntelligence.Objects;
     using Skyline.DataMiner.Net.Messages.SLDataGateway;
-    using Skyline.DataMiner.Utils.Examples.EventManager.ApiHelpers;
-    using Skyline.DataMiner.Utils.Examples.EventManager.Models;
+    using Skyline.DataMiner.Utils.Examples.EventManagement.ApiHelpers;
+    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;

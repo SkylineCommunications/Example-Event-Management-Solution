@@ -9,8 +9,8 @@
     using Skyline.DataMiner.Net.Jobs;
 	using Skyline.DataMiner.Net.Messages.SLDataGateway;
 	using Skyline.DataMiner.SDM;
-    using Skyline.DataMiner.Utils.Examples.EventManager.ApiHelpers;
-    using Skyline.DataMiner.Utils.Examples.EventManager.Models;
+    using Skyline.DataMiner.Utils.Examples.EventManagement.ApiHelpers;
+    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
     using SLDataGateway.API.Querying;
 
 	/// <summary>
