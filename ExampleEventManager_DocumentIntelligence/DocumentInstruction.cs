@@ -28,6 +28,7 @@ ADDITIONAL INFORMATIN
 
 - You will be given a word document you need to translate it to a prompt as in the example output to create an event.
 - The prompt needs to be human readable
+- Make sure that the json returned is as in the format of the example output, with a single property Prompt which contains the human readable prompt.
 - The fields of the event you can find I the below openapi spec YAML.
 - The field Status should always have as value requested regardless of the value in the document.
 
