@@ -13,7 +13,7 @@
     /// </summary>
     public class UploadController
     {
-        private const string DEFAULTFOLDER = @"C:\Skyline DataMiner\Documents\DMA_COMMON_DOCUMENTS\Example Event Management\";
+        private const string DEFAULTFOLDER = @"C:\Skyline DataMiner\Documents\DMA_COMMON_DOCUMENTS\Example Event Management\UploadedFiles\";
 
         private InteractiveController _controller;
         private IEngine _engine;
