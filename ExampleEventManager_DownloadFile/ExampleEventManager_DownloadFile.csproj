@@ -4,17 +4,15 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 	<PropertyGroup>
-		<DataMinerType>UserDefinedApi</DataMinerType>
+		<DataMinerType>AutomationScript</DataMinerType>
 		<GenerateDataMinerPackage>False</GenerateDataMinerPackage>
-		<MinimumRequiredDmVersion>10.3.6.0 - 13026</MinimumRequiredDmVersion>
+		<MinimumRequiredDmVersion>10.3.0.0 - 12752</MinimumRequiredDmVersion>
 		<Version>1.0.0</Version>
 		<VersionComment>Initial Version</VersionComment>
-    <GenerateOpenApi>true</GenerateOpenApi>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Skyline.DataMiner.Dev.Automation" Version="10.6.3" />
-		<PackageReference Include="Skyline.DataMiner.Learning.EventManagement" Version="1.0.1" />
-		<PackageReference Include="Skyline.DataMiner.SDM.UserDefinedApi" Version="1.0.1" />
+		<PackageReference Include="Skyline.DataMiner.Utils.InteractiveAutomationScriptToolkit" Version="10.6.3.1" />
 		<PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.2.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
