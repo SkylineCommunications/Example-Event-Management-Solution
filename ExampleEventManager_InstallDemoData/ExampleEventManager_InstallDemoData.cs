@@ -12,8 +12,8 @@ DATE		VERSION		AUTHOR			COMMENTS
 */
 
 using Skyline.DataMiner.Automation;
-using Skyline.DataMiner.Utils.Examples.EventManagement.ApiHelpers;
-using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
+using Skyline.DataMiner.Learning.EventManagement.ApiHelpers;
+using Skyline.DataMiner.Learning.EventManagement.Models;
 using System;
 using System.Collections.Generic;
 

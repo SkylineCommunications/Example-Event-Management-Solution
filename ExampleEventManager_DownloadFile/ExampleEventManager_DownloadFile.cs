@@ -81,10 +81,18 @@ namespace ExampleEventManagerDownloadFile
         }
     }
 
+    /// <summary>
+    /// Represents a dialog that displays a button for downloading a file.
+    /// </summary>
     public class DownloadButtonDialog : Dialog
     {
         private DownloadButton downloadButton;
 
+        /// <summary>
+        /// Initializes a new instance of the DownloadButtonDialog class, configuring the download button and dialog
+        /// title based on the provided engine parameters.
+        /// </summary>
+        /// <param name="engine">The engine used to retrieve script parameters for configuring the dialog.</param>
         public DownloadButtonDialog(IEngine engine) : base(engine)
         {
             var filePath = engine.GetScriptParam("filePath").Value.Trim('[', ']', '"');
@@ -106,6 +114,9 @@ namespace ExampleEventManagerDownloadFile
             AddWidget(downloadButton, 1,0);
         }
 
+        /// <summary>
+        /// Gets the download button control.
+        /// </summary>
         public DownloadButton DownloadButton { get { return downloadButton; } }
     }
 }

@@ -6,10 +6,10 @@ namespace ExampleEventManager_GQIDs.Events
     using GQI_Shared;
     using Skyline.DataMiner.Analytics.GenericInterface;
     using Skyline.DataMiner.Analytics.GenericInterface.Operators;
+    using Skyline.DataMiner.Learning.EventManagement.ApiHelpers;
+    using Skyline.DataMiner.Learning.EventManagement.Models;
     using Skyline.DataMiner.Net.Messages.SLDataGateway;
     using Skyline.DataMiner.SDM.UserDefinedApi.OData;
-    using Skyline.DataMiner.Utils.Examples.EventManagement.ApiHelpers;
-    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
     using SLDataGateway.API.Querying;
 
     /// <summary>
@@ -32,6 +32,11 @@ namespace ExampleEventManager_GQIDs.Events
         private IGQISortOperator _sortOperator;
         private GQIPageEnumerator _pageEnumerator;
 
+        /// <summary>
+        /// Initializes internal components and dependencies using the provided input arguments.
+        /// </summary>
+        /// <param name="args">Input arguments containing required services and configuration.</param>
+        /// <returns>An output argument object representing the result of the initialization.</returns>
         public OnInitOutputArgs OnInit(OnInitInputArgs args)
         {
             _dms = args.DMS;
@@ -42,11 +47,21 @@ namespace ExampleEventManager_GQIDs.Events
             return default;
         }
 
+        /// <summary>
+        /// Retrieves the collection of columns associated with the current instance.
+        /// </summary>
+        /// <returns>An array of GQIColumn objects representing the columns.</returns>
         public GQIColumn[] GetColumns()
         {
             return _columns.GetColumns();
         }
 
+        /// <summary>
+        /// Optimizes the query node by handling sort operators or appending the next operator.
+        /// </summary>
+        /// <param name="currentNode">The current query node to optimize.</param>
+        /// <param name="nextOperator">The next core operator to apply.</param>
+        /// <returns>The optimized query node.</returns>
         public IGQIQueryNode Optimize(IGQIDataSourceNode currentNode, IGQICoreOperator nextOperator)
         {
             if (nextOperator.IsSortOperator(out var sortOperator))
@@ -58,6 +73,11 @@ namespace ExampleEventManager_GQIDs.Events
             return currentNode.Append(nextOperator);
         }
 
+        /// <summary>
+        /// Prepares and executes a fetch operation for events, applying filters and sorting as specified.
+        /// </summary>
+        /// <param name="args">Input arguments containing filter and sorting information.</param>
+        /// <returns>An output argument containing the results of the fetch operation.</returns>
         public OnPrepareFetchOutputArgs OnPrepareFetch(OnPrepareFetchInputArgs args)
         {
             var filter = new TRUEFilterElement<Event>().ToQuery();
@@ -83,6 +103,11 @@ namespace ExampleEventManager_GQIDs.Events
             return default;
         }
 
+        /// <summary>
+        /// Retrieves the next page of results from the enumerator.
+        /// </summary>
+        /// <param name="args">Input arguments for retrieving the next page.</param>
+        /// <returns>The next page of results.</returns>
         public GQIPage GetNextPage(GetNextPageInputArgs args)
         {
             return _pageEnumerator.GetNextPage(100);
@@ -102,11 +127,20 @@ namespace ExampleEventManager_GQIDs.Events
              });
         }
 
+        /// <summary>
+        /// Retrieves the collection of input arguments.
+        /// </summary>
+        /// <returns>An array of input arguments.</returns>
         public GQIArgument[] GetInputArguments()
         {
             return _inputs.GetArguments();
         }
 
+        /// <summary>
+        /// Processes the specified input arguments and returns the result.
+        /// </summary>
+        /// <param name="args">The input arguments to process.</param>
+        /// <returns>The result of processing the input arguments.</returns>
         public OnArgumentsProcessedOutputArgs OnArgumentsProcessed(OnArgumentsProcessedInputArgs args)
         {
             _inputs.Process(args);

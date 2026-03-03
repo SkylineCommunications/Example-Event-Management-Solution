@@ -15,12 +15,12 @@ namespace ExampleEventManagerEventIntelligence
 {
     using Newtonsoft.Json;
     using Skyline.DataMiner.Automation;
+    using Skyline.DataMiner.Learning.EventManagement.ApiHelpers;
+    using Skyline.DataMiner.Learning.EventManagement.Models;
     using Skyline.DataMiner.Net;
     using Skyline.DataMiner.Net.Apps.DocumentIntelligence;
     using Skyline.DataMiner.Net.Apps.DocumentIntelligence.Objects;
     using Skyline.DataMiner.Net.Messages.SLDataGateway;
-    using Skyline.DataMiner.Utils.Examples.EventManagement.ApiHelpers;
-    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -140,11 +140,30 @@ namespace ExampleEventManagerEventIntelligence
         }
 	}
 
+    /// <summary>
+    /// Represents instructions for processing a result, including OData filter, HTTP verb, HTTP body, and model
+    /// identifier.
+    /// </summary>
     public class ResultInstructions
     {
+        /// <summary>
+        /// Gets or sets the OData filter expression used to query data.
+        /// </summary>
         public string ODATAFILTER { get; set; }
+
+        /// <summary>
+        /// Gets or sets the HTTP verb used for the request.
+        /// </summary>
         public string HTTPVERB { get; set; }
+
+        /// <summary>
+        /// Gets or sets the HTTP body content, which may contain data for creating or updating events, or other relevant information based on the specified HTTP verb.
+        /// </summary>
         public string HTTPBODY { get; set; }
+
+        /// <summary>
+        /// Gets or sets the model identifier, which can be used to specify the target event for delete operations, or other relevant information based on the specified HTTP verb.
+        /// </summary>
         public string MODELID { get; set; }
     }
 }

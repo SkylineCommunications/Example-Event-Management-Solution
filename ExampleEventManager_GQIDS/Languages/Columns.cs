@@ -6,9 +6,9 @@
 
 	using Skyline.DataMiner.Analytics.GenericInterface;
 	using Skyline.DataMiner.Analytics.GenericInterface.Operators;
-	using Skyline.DataMiner.Net.Messages.SLDataGateway;
+    using Skyline.DataMiner.Learning.EventManagement.Models;
+    using Skyline.DataMiner.Net.Messages.SLDataGateway;
 	using Skyline.DataMiner.SDM;
-    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
     using SLDataGateway.API.Querying;
 	using SLDataGateway.API.Types.Querying;
 

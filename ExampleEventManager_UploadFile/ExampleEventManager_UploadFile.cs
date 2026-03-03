@@ -7,22 +7,19 @@ Revision History:
 
 DATE		VERSION		AUTHOR			COMMENTS
 
-24/02/2026	1.0.0.1		TVD, Skyline	Initial version
+03/03/2026	1.0.0.1		TVD, Skyline	Initial version
 ****************************************************************************
 */
 
-using ExampleEventManager_DocumentIntelligence;
-using Newtonsoft.Json;
+using ExampleEventManager_UploadFile.Controller;
 using Skyline.DataMiner.Automation;
-using Skyline.DataMiner.Net.Apps.DocumentIntelligence;
-using Skyline.DataMiner.Net.Apps.DocumentIntelligence.Objects;
+using Skyline.DataMiner.Utils.InteractiveAutomationScript;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Text;
 
-namespace ExampleEventManagerDocumentIntelligence
+namespace ExampleEventManagerUploadFile
 {
     /// <summary>
     /// Represents a DataMiner Automation script.
@@ -68,45 +65,7 @@ namespace ExampleEventManagerDocumentIntelligence
 
         private void RunSafe(IEngine engine)
         {
-            var filePath = engine.GetScriptParam("filePath").Value.Trim('[',']','"');
-
-            engine.Log("FILEPATH: " + filePath);
-
-            // Read file content
-            //var filePath = @"C:\Skyline DataMiner\Documents\DMA_COMMON_DOCUMENTS\Example Event Management\EventRequestForm_ExampleEvent.docx";
-            var fileBytes = File.ReadAllBytes(filePath);
-
-            // Write instructions
-            // See DocumentInstruction.cs for more details on the instructions.
-
-            // Create Document Intelligence helper
-            var docIntelHelper = new DocumentIntelligenceHelper(engine.SendSLNetMessages);
-            // Request Document Intelligence analysis
-            var analysisResult = docIntelHelper.AnalyzeDocuments(DocumentInstruction.Instruction, new List<Document>()
-            {
-                new Document()
-                {
-                    Name = Path.GetFileName(filePath),
-                    Content = fileBytes
-                }
-            });
-
-            engine.Log("RESULT OF DOC ANALYSIS: " + analysisResult);
-
-            var prompResult = JsonConvert.DeserializeObject<PromptResult>(analysisResult);
-
-            engine.AddOrUpdateScriptOutput("PROMPTRESULT", prompResult.Prompt);
+            var uploadController = new UploadController(engine);
         }
-    }
-
-    /// <summary>
-    /// Represents the result of a prompt operation.
-    /// </summary>
-    public class PromptResult
-    {
-        /// <summary>
-        /// Gets or sets the text used as a prompt.
-        /// </summary>
-        public string Prompt { get; set; }
     }
 }

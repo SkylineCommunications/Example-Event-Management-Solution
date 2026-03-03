@@ -3,14 +3,17 @@
 	using System;
 	using System.Linq;
 	using Microsoft.Extensions.Logging;
-	using Skyline.DataMiner.Net.Jobs;
+    using Skyline.DataMiner.Learning.EventManagement.Models;
+    using Skyline.DataMiner.Net.Jobs;
 	using Skyline.DataMiner.Net.Messages.SLDataGateway;
 	using Skyline.DataMiner.SDM;
 	using Skyline.DataMiner.SDM.UserDefinedApi;
 	using Skyline.DataMiner.SDM.UserDefinedApi.OData;
 	using Skyline.DataMiner.SDM.UserDefinedApi.OData.Exceptions;
-    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
 
+	/// <summary>
+	/// Provides API endpoints for managing Event objects, including retrieval, creation, update, and deletion operations.
+	/// </summary>
     [ApiController]
 	[Route("eventmanager/events")]
 	public class EventsController : ControllerBase
@@ -19,6 +22,12 @@
 		private readonly IRepository<Event> _repository;
 		private readonly ODataSdmTranslator<Event> _translator;
 
+		/// <summary>
+		/// Initializes a new instance of the EventsController class.
+		/// </summary>
+		/// <param name="logger">The logger used for logging events.</param>
+		/// <param name="repository">The repository for accessing Event entities.</param>
+		/// <exception cref="ArgumentNullException">Thrown when logger or repository is null.</exception>
 		public EventsController(
 			ILogger<EventsController> logger,
 			IRepository<Event> repository)

@@ -1,8 +1,17 @@
 ﻿namespace ExampleEventManagerEventIntelligence
 {
+    /// <summary>
+    /// Provides example instructions and response formats for interacting with the ExampleEventManager User Defined
+    /// API, including event retrieval, creation, update, and deletion operations.
+    /// </summary>
+    /// <remarks>Includes sample documents, expected response structures, required formats, and the OpenAPI
+    /// specification for event management endpoints.</remarks>
     public class IntelligenceInstruction
     {
-
+        /// <summary>
+        /// Provides example documents, responses, required formats, and OpenAPI specification for interacting with the
+        /// ExampleEventManager_UDAPI, including event retrieval, creation, update, and deletion scenarios.
+        /// </summary>
         public static string Instruction = @"EXAMPLE DOCUMENT 1
 				<html>
 					<prompt>I want to get all events with priority high</prompt>

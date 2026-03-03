@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace ExampleEventManager_DocumentIntelligence
 {
+    /// <summary>
+    /// Provides instructions and an example for generating a human-readable event creation prompt from a Word document,
+    /// formatted as JSON with a single Prompt property.
+    /// </summary>
+    /// <remarks>Use the provided example and guidelines to ensure the output matches the required format and
+    /// includes all necessary event fields. The Status field must always be set to "Requested".</remarks>
     public class DocumentInstruction
     {
+        /// <summary>
+        /// Provides instructions and an example output for generating a human-readable event creation prompt in JSON
+        /// format, based on a Word document and the specified OpenAPI event schema.
+        /// </summary>
+        /// <remarks>The prompt must follow the example output format, include all required event fields,
+        /// and set the Status field to 'Requested' regardless of the document's value.</remarks>
         public static string Instruction = @"EXAMPLE OUTPUT:
 {
  ""Prompt"": ""
@@ -27,7 +39,7 @@ And following languages:
 ADDITIONAL INFORMATIN
 
 - You will be given a word document you need to translate it to a prompt as in the example output to create an event.
-- The prompt needs to be human readable
+- The prompt needs to be human readable and contain carriage returns
 - Make sure that the json returned is as in the format of the example output, with a single property Prompt which contains the human readable prompt.
 - The fields of the event you can find I the below openapi spec YAML.
 - The field Status should always have as value requested regardless of the value in the document.

@@ -4,11 +4,11 @@
 	using System.Runtime.CompilerServices;
 	using Microsoft.Extensions.DependencyInjection;
 	using Skyline.DataMiner.Automation;
-	using Skyline.DataMiner.SDM;
+    using Skyline.DataMiner.Learning.EventManagement.ApiHelpers;
+    using Skyline.DataMiner.Learning.EventManagement.Models;
+    using Skyline.DataMiner.SDM;
 	using Skyline.DataMiner.SDM.UserDefinedApi;
 	using Skyline.DataMiner.SDM.UserDefinedApi.DI;
-    using Skyline.DataMiner.Utils.Examples.EventManagement.ApiHelpers;
-    using Skyline.DataMiner.Utils.Examples.EventManagement.Models;
 
     internal static class UserDefinedApiExtensions
 	{
