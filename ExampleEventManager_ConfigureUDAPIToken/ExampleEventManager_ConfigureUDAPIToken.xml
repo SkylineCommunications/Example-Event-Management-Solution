@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <DMSScript options="272" xmlns="http://www.skyline.be/automation">
-	<Name>ExampleEventManager_DocumentIntelligence</Name>
+	<Name>ExampleEventManager_ConfigureUDAPIToken</Name>
 	<Description></Description>
 	<Type>Automation</Type>
 	<Author>TVD</Author>
 	<CheckSets>FALSE</CheckSets>
-	<Folder>Example Event Manager Solution/Examples</Folder>
-	<Interactivity>Auto</Interactivity>
+	<Folder>Example Event Manager Solution/AppConfigurations</Folder>
+	<Interactivity>Always</Interactivity>
 
 	<Protocols>
 	</Protocols>
@@ -15,14 +15,11 @@
 	</Memory>
 
 	<Parameters>
-		<ScriptParameter id="2" type="string" values="">
-			<Description>filePath</Description>
-		</ScriptParameter>
 	</Parameters>
 
 	<Script>
 		<Exe id="1" type="csharp">
-			<Value><![CDATA[[Project:ExampleEventManager_DocumentIntelligence]]]></Value>
+			<Value><![CDATA[[Project:ExampleEventManager_ConfigureUDAPIToken]]]></Value>
 			<!--<Param type="debug">true</Param>-->
 			<Message></Message>
 		</Exe>
