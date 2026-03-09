@@ -6,7 +6,7 @@
 	<PropertyGroup>
 		<DataMinerType>Package</DataMinerType>
 		<GenerateDataMinerPackage>True</GenerateDataMinerPackage>
-		<MinimumRequiredDmVersion>10.3.0.0 - 12752</MinimumRequiredDmVersion>
+		<MinimumRequiredDmVersion>10.6.3.0 - 16832</MinimumRequiredDmVersion>
 		<!-- <MinimumRequiredDmWebVersion>10.6.2 (CU0)</MinimumRequiredDmWebVersion> -->
 		<Version>1.0.0</Version>
 		<VersionComment>Initial Version</VersionComment>
