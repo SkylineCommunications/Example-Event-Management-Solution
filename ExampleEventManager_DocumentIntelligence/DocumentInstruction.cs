@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ExampleEventManager_DocumentIntelligence
+﻿namespace ExampleEventManager_DocumentIntelligence
 {
     /// <summary>
     /// Provides instructions and an example for generating a human-readable event creation prompt from a Word document,

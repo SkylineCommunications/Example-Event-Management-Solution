@@ -11,12 +11,13 @@ DATE		VERSION		AUTHOR			COMMENTS
 ****************************************************************************
 */
 
+using System;
+
 using Example_Event_Manager.Installers;
+
 using Skyline.AppInstaller;
 using Skyline.DataMiner.Automation;
 using Skyline.DataMiner.Net.AppPackages;
-using System;
-using System.Collections.Generic;
 
 /// <summary>
 /// DataMiner Script Class.
@@ -38,19 +39,15 @@ internal class Script
 			var installer = new AppInstaller(Engine.SLNetRaw, context);
 			installer.InstallDefaultContent();
 
-            ////string setupContentPath = installer.GetSetupContentDirectory();
+			// Installing demo data by running the ExampleEventManager_InstallDemoData script.
+			var demoDataInstaller = new DemoDataInstaller(engine, context);
+			demoDataInstaller.InstallDefaultContent();
 
-            // Custom installation logic can be added here for each individual install package.
-
-            // Installing demo data by running the ExampleEventManager_InstallDemoData script.
-           var demoDataInstaller = new DemoDataInstaller(Engine.SLNetRaw, context);
-			demoDataInstaller.InstallDefaultContent(engine);
-
-            // Configure UDAPI route
-			var udapiInstaller = new UDAPIInstaller(Engine.SLNetRaw, context);
+			// Configure UDAPI route
+			var udapiInstaller = new UdapiInstaller(Engine.SLNetRaw, context);
 			udapiInstaller.InstallDefaultContent();
-        }
-        catch (Exception e)
+		}
+		catch (Exception e)
 		{
 			engine.ExitFail($"Exception encountered during installation: {e}");
 		}

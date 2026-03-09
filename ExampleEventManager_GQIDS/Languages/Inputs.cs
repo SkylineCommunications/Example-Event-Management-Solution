@@ -26,6 +26,6 @@
 			}
 		}
 
-		internal bool Validate() => Guid.TryParse(Identifier, out Guid result);
+		internal bool Validate() => Guid.TryParse(Identifier, out _);
 	}
 }

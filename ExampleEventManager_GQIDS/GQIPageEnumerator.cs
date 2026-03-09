@@ -1,11 +1,11 @@
-﻿namespace GQI_Shared
+﻿namespace ExampleEventManager_GQIDS
 {
 	using System;
 	using System.Collections.Generic;
 
 	using Skyline.DataMiner.Analytics.GenericInterface;
 
-	public class GQIPageEnumerator : IDisposable
+	internal class GQIPageEnumerator : IDisposable
 	{
 		private readonly IEnumerator<GQIRow> _enumerator;
 

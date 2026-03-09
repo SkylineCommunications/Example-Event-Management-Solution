@@ -1,9 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11520.95 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GQI_Shared", "GQI_Shared\GQI_Shared.shproj", "{2A202239-F01E-49FE-B9DF-6707AC07F94B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_UDAPI", "ExampleEventManager_UDAPI\ExampleEventManager_UDAPI.csproj", "{A2FCA06F-96CA-45B0-A867-1949113FD503}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleEventManager_EventIntelligence", "ExampleEventManager_EventIntelligence\ExampleEventManager_EventIntelligence.csproj", "{F4FC4AD4-E743-48AB-96E9-E2A387F0BA84}"
@@ -84,7 +82,6 @@ Global
 		SolutionGuid = {FAEEEFD5-BE1D-4B64-AF51-6B2ED8B7A8FD}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		GQI_Shared\GQI_Shared.projitems*{2a202239-f01e-49fe-b9df-6707ac07f94b}*SharedItemsImports = 13
 		GQI_Shared\GQI_Shared.projitems*{a3ee21e7-9d25-4f90-8e05-5c2207709cde}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

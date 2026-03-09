@@ -165,7 +165,7 @@
 
 				REQUIRED FORMATS
 
-				- the http verb in the respionse can be GET,PUT, POST or DELETE
+				- the http verb in the response can be GET,PUT, POST or DELETE
 				- when the prompt tag refers to retrieving data, the OData filter in the response should be filled in and the http body should be empty and the HTTPverb should be get
 				- when the prompt tag refers to updating or creating data, the OData filter in the response should be empty and the http body should be filled in with the new or updated data and the HTTPverb should be PUT for update and POST for create
 				- when the prompt tag refers to deleting data, the MODELID in the response should be filled in with the if of the items to delete and the http body should be empty and the HTTPverb should be DELETE

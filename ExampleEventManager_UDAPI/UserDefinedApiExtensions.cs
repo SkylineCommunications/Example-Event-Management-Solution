@@ -2,15 +2,17 @@
 {
 	using System;
 	using System.Runtime.CompilerServices;
+
 	using Microsoft.Extensions.DependencyInjection;
+
 	using Skyline.DataMiner.Automation;
-    using Skyline.DataMiner.Learning.EventManagement.ApiHelpers;
-    using Skyline.DataMiner.Learning.EventManagement.Models;
-    using Skyline.DataMiner.SDM;
+	using Skyline.DataMiner.Learning.EventManagement.ApiHelpers;
+	using Skyline.DataMiner.Learning.EventManagement.Models;
+	using Skyline.DataMiner.SDM;
 	using Skyline.DataMiner.SDM.UserDefinedApi;
 	using Skyline.DataMiner.SDM.UserDefinedApi.DI;
 
-    internal static class UserDefinedApiExtensions
+	internal static class UserDefinedApiExtensions
 	{
 		public static UserDefinedApi.UserDefinedApiBuilder AddServices(this UserDefinedApi.UserDefinedApiBuilder builder)
 		{
@@ -21,7 +23,7 @@
 
 			// This ensures that static constructors are called and exposers are registered.
 			RuntimeHelpers.RunClassConstructor(typeof(EventExposers).TypeHandle);
-			RuntimeHelpers.RunClassConstructor(typeof(EventExposers.Languages).TypeHandle);
+
 			// Register repositories.
 			return builder
  					.AddRepository<Event, IBulkRepository<Event>>(

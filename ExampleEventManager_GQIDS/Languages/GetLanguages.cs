@@ -2,27 +2,29 @@
 {
 	using System.Collections.Generic;
 	using System.Linq;
-	using GQI_Shared;
+
+	using ExampleEventManager_GQIDS;
+
 	using Skyline.DataMiner.Analytics.GenericInterface;
-    using Skyline.DataMiner.Analytics.GenericInterface.Operators;
-    using Skyline.DataMiner.Learning.EventManagement.ApiHelpers;
-    using Skyline.DataMiner.Learning.EventManagement.Models;
-    using Skyline.DataMiner.Net.Jobs;
+	using Skyline.DataMiner.Analytics.GenericInterface.Operators;
+	using Skyline.DataMiner.Learning.EventManagement.ApiHelpers;
+	using Skyline.DataMiner.Learning.EventManagement.Models;
+	using Skyline.DataMiner.Net.Jobs;
 	using Skyline.DataMiner.Net.Messages.SLDataGateway;
 	using Skyline.DataMiner.SDM;
-    using SLDataGateway.API.Querying;
+
+	using SLDataGateway.API.Querying;
 
 	/// <summary>
 	/// Represents a data source.
 	/// See: https://aka.dataminer.services/gqi-external-data-source for a complete example.
 	/// </summary>
 	[GQIMetaData(Name = "Event.Get Languages")]
-	public sealed class GetLanguages : IGQIDataSource
+	public sealed class GetLanguages : IGQIOptimizableDataSource
  		, IGQIOnInit
  		, IGQIInputArguments
  		, IGQIOnPrepareFetch
 	{
-		private GQIDMS _dms;
 		private Columns _columns;
 		private Inputs _inputs;
 		private EventApiHelper _eventApiHelper;
@@ -37,11 +39,10 @@
 		/// <returns>An output argument object representing the result of the initialization.</returns>
 		public OnInitOutputArgs OnInit(OnInitInputArgs args)
 		{
-			_dms = args.DMS;
 			_columns = new Columns();
 			_inputs = new Inputs();
-			_logger = args.Logger;	
-			_eventApiHelper = new EventApiHelper(_dms.GetConnection());
+			_logger = args.Logger;
+			_eventApiHelper = new EventApiHelper(args.DMS.GetConnection());
 			return default;
 		}
 
@@ -75,29 +76,46 @@
 		}
 
 		/// <summary>
+		/// Optimizes the query node by handling sort operators or appending the next operator.
+		/// </summary>
+		/// <param name="currentNode">The current query node to optimize.</param>
+		/// <param name="nextOperator">The next core operator to apply.</param>
+		/// <returns>The optimized query node.</returns>
+		public IGQIQueryNode Optimize(IGQIDataSourceNode currentNode, IGQICoreOperator nextOperator)
+		{
+			if (nextOperator.IsSortOperator(out var sortOperator))
+			{
+				_sortOperator = sortOperator;
+				return currentNode;
+			}
+
+			return currentNode.Append(nextOperator);
+		}
+
+		/// <summary>
 		/// Prepares and fetches event data based on input arguments, applying validation, filtering, and sorting.
 		/// </summary>
 		/// <param name="args">Input arguments containing event identifier and related parameters.</param>
 		/// <returns>An output argument containing the result of the fetch operation.</returns>
 		public OnPrepareFetchOutputArgs OnPrepareFetch(OnPrepareFetchInputArgs args)
 		{
-			if(_inputs.Validate() == false)
+			if (!_inputs.Validate())
 			{
 				_logger.Error($"Invalid input: Identifier must be a valid GUID. Provided value: {_inputs.Identifier}");
 				_pageEnumerator = new GQIPageEnumerator(new List<GQIRow>());
 				return default;
 			}
 
-			var filter = new ANDFilterElement<Event>(EventExposers.Identifier.Equal(_inputs.Identifier)).ToQuery();
+			var query = EventExposers.Identifier.Equal(_inputs.Identifier).ToQuery();
 			foreach (var sortField in _sortOperator?.Fields ?? Enumerable.Empty<IGQISortField>())
 			{
-				filter = _columns.ApplySorting(filter, sortField);
+				query = _columns.ApplySorting(query, sortField);
 			}
 
-			// Use SelectMany to flatten the IEnumerable<IEnumerator<GQIRow>> to IEnumerable<GQIRow>
+			// Use SelectMany to flatten the IEnumerable<IPagedResult<GQIRow>> to IEnumerable<GQIRow>
 			_pageEnumerator = new GQIPageEnumerator(
  				_eventApiHelper.Events
- 					.ReadPaged(filter, 100)
+ 					.ReadPaged(query, 100)
  					.SelectMany(page => page.SelectMany(CreateGQIRows)));
 
 			return default;
@@ -113,13 +131,22 @@
 			return _pageEnumerator.GetNextPage(100);
 		}
 
-		private IEnumerable<GQIRow> CreateGQIRows(Event empEvent)
+		private static IEnumerable<GQIRow> CreateGQIRows(Event empEvent)
 		{
-
 			foreach (var package in empEvent.Languages)
 			{
-				yield return _columns.CreateGQIRow(package);
+				yield return CreateGQIRow(package);
 			}
+		}
+
+		private static GQIRow CreateGQIRow(Language language)
+		{
+			return new GQIRow(new GQICell[]
+			{
+ 				new GQICell { Value = language.Name },
+				new GQICell { Value = (int) language.AudioType, DisplayValue = language.AudioType.ToString() },
+				new GQICell { Value = language.CcSupplierCompanyName },
+			});
 		}
 	}
 }
