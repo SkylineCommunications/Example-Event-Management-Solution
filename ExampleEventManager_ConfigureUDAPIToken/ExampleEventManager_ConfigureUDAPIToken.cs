@@ -90,10 +90,11 @@ namespace ExampleEventManager_ConfigureUDAPIToken
 
 			// create a new token with name "eventManagerToken"
 			// Create the token
+			var secret = ApiTokenSecretGenerator.GenerateSecret();
 			var token = new ApiToken()
 			{
 				Name = API_TOKEN_NAME,
-				Secret = ApiTokenSecretGenerator.GenerateSecret()
+				Secret = secret
 			};
 			token = helper.ApiTokens.Create(token);
 
@@ -103,7 +104,7 @@ namespace ExampleEventManager_ConfigureUDAPIToken
 
 			// Show the token in a dialog so the user can copy it, as it will not be shown again for security reasons
 			var controller = new InteractiveController(engine);
-			var dialog = new TokenDialog(engine, token.Secret);
+			var dialog = new TokenDialog(engine, secret);
 			dialog.CloseButton.Pressed += (s, e) =>
 			{
 				engine.ExitSuccess("Secret provided");

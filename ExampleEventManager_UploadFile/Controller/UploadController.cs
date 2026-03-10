@@ -32,6 +32,7 @@
 			_dialog = new UploadFileDialog(engine);
 
 			_dialog.OkButton.Pressed += OkButton_Pressed;
+			_dialog.CancelButton.Pressed += (sender, e) => _controller.Stop();
 
 			_controller.ShowDialog(_dialog);
 		}

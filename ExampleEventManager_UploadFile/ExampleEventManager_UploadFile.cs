@@ -37,7 +37,7 @@ namespace ExampleEventManagerUploadFile
 			catch (ScriptAbortException)
 			{
 				// Catch normal abort exceptions (engine.ExitFail or engine.ExitSuccess)
-				throw; // Comment if it should be treated as a normal exit of the script.
+				// Comment if it should be treated as a normal exit of the script.
 			}
 			catch (ScriptForceAbortException)
 			{

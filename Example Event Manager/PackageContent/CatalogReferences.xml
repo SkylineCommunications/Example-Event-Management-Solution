@@ -1,11 +1,11 @@
 <CatalogReferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skyline.be/catalogReferences">
-<!--
-	<CatalogReference id="guid">
-		<Name>Example Catalog Item (Specific Version)</Name>
+	<CatalogReference id="7c402377-ce88-479f-a249-5c086b5d84bd">
+		<Name>Example Event Manager Backend</Name>
 		<Selection>
-			<Specific>1.0.0.1</Specific>
+			<Specific>1.0.1</Specific>
 		</Selection>
 	</CatalogReference>
+<!--
 	<CatalogReference id="guid">
 		<Name>Example Catalog Item (Range)</Name>
 		<Selection>

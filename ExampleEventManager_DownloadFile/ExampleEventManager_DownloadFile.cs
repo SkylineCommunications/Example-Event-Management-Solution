@@ -36,7 +36,7 @@ namespace ExampleEventManager_DownloadFile
 			catch (ScriptAbortException)
 			{
 				// Catch normal abort exceptions (engine.ExitFail or engine.ExitSuccess)
-				throw; // Comment if it should be treated as a normal exit of the script.
+				// throw; // Comment if it should be treated as a normal exit of the script.
 			}
 			catch (ScriptForceAbortException)
 			{
@@ -65,11 +65,7 @@ namespace ExampleEventManager_DownloadFile
 			var controller = new InteractiveController(engine);
 			var dialog = new DownloadButtonDialog(engine);
 
-			dialog.DownloadButton.DownloadStarted += (s, e) =>
-			{
-				engine.Log("Download started");
-				engine.ExitSuccess("File started to download");
-			};
+			dialog.DownloadButton.DownloadStarted += (s, e) => controller.Stop();
 
 			controller.ShowDialog(dialog);
 		}
