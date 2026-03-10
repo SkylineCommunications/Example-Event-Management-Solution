@@ -3,6 +3,7 @@
 		<TargetFramework>net48</TargetFramework>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
+	
 	<PropertyGroup>
 		<DataMinerType>Package</DataMinerType>
 		<GenerateDataMinerPackage>True</GenerateDataMinerPackage>
@@ -15,6 +16,7 @@
 		<CatalogDefaultDownloadKeyName>skyline:sdk:dataminertoken</CatalogDefaultDownloadKeyName>
 		<UserSecretsId>5cf8cac1-affd-46d7-a144-01b2d307ab86</UserSecretsId>
 	</PropertyGroup>
+	
 	<ItemGroup>
 		<PackageReference Include="Skyline.DataMiner.Core.AppPackageInstaller" Version="3.3.0" />
 		<PackageReference Include="Skyline.DataMiner.Dev.Automation" Version="10.6.3" />
